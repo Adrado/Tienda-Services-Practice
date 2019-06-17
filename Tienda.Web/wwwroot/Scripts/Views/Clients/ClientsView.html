@@ -1,0 +1,21 @@
+﻿<style>
+</style>
+
+<div class="View">
+    <div class="main-w3layouts wrapper FormularioMain">
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form name="MyForm">
+                    <input class="text" type="text" placeholder="Name" ng-model="vm.Name" required="">
+                    <input class="text" type="text" placeholder="Surname" ng-model="vm.Surname" required="">
+                    <input class="text" type="email" placeholder="Email" ng-model="vm.Email" required="">
+                    <input class="text" type="password" placeholder="Password" ng-model="vm.Password" required="">
+                    <input class="text" type="text" placeholder="Address" ng-model="vm.Address" required="">
+                    <input type="submit" value="Add" id="AddButton" class="submit" ng-click="vm.CheckFormAdd(MyForm.$valid)" ng-show="!vm.IsEditing">
+                    <input type="submit" value="Save" id="SaveButton" ng-click="vm.CheckFormSave(MyForm.$valid)" ng-show="vm.IsEditing">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div ui-grid="vm.GridOptions"></div>
+</div>

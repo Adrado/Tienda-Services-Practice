@@ -1,0 +1,24 @@
+﻿<style>
+</style>
+
+<div class="View">
+    <div class="main-w3layouts wrapper FormularioMain">
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form name="MyForm">
+                    Select Client
+                    <select ng-model="vm.SelectedClient" ng-options="client.Name for client in vm.Clients" required>
+                        <option value="" disabled selected>Select a Client</option>
+                    </select>
+                    Select Product
+                    <select ng-model="vm.SelectedProduct" ng-options="product.ProductName for product in vm.Products" required>
+                        <option value="" disabled selected>Select a Product</option>
+                    </select>
+                    <input type="submit" value="Buy" id="AddButton" class="submit" ng-click="vm.CheckFormSave(MyForm.$valid)" ng-show="!vm.IsEditing">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div ui-grid="vm.GridOptions"></div>
+
+</div>

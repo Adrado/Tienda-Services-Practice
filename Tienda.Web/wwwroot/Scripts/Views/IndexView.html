@@ -1,0 +1,44 @@
+﻿<style>
+    .Menu
+    {
+        width: var(--menuWidth); 
+        height: 100%; 
+        background-color: black;    
+        margin: 0px;
+        padding:0;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+
+   .Header
+    {
+        width: calc(100% - var(--menuWidth));
+        height: var(--headerHeight); 
+        background-color: pink;
+        padding:0;
+        position: absolute;
+        left: var(--menuWidth);
+        top: 0px;
+    }
+
+   .Content
+    {
+        width: calc(100% - var(--menuWidth));
+        height: calc(100% - var(--headerHeight)); 
+        position: absolute;
+        top: var(--headerHeight);
+        left: var(--menuWidth);
+        background-color: white;
+        padding: 0;
+        margin: 0;
+    } 
+</style>
+
+<div class="MainContainer wrapper" style="background-color: black;">
+    <menu class="Menu" id="Menu"></menu>
+    <header class="Header" id="Header"></header>
+    <div class="Content" id="Content">
+        <div ng-view class="View" id="content"></div>
+    </div>
+</div>
