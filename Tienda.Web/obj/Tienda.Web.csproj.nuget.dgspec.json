@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\Examen copia\\Tienda.Web\\Tienda.Web.csproj": {}
+    "C:\\Dev\\Tienda Services\\Tienda.Web\\Tienda.Web.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\Examen copia\\Tienda.Lib\\Tienda.Lib.csproj": {
+    "C:\\Dev\\Tienda Services\\Tienda.Lib\\Tienda.Lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\Examen copia\\Tienda.Lib\\Tienda.Lib.csproj",
+        "projectUniqueName": "C:\\Dev\\Tienda Services\\Tienda.Lib\\Tienda.Lib.csproj",
         "projectName": "Tienda.Lib",
-        "projectPath": "C:\\Dev\\Examen copia\\Tienda.Lib\\Tienda.Lib.csproj",
+        "projectPath": "C:\\Dev\\Tienda Services\\Tienda.Lib\\Tienda.Lib.csproj",
         "packagesPath": "C:\\Users\\A4ALUMNO\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\Examen copia\\Tienda.Lib\\obj\\",
+        "outputPath": "C:\\Dev\\Tienda Services\\Tienda.Lib\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\Dev\\Examen copia\\Tienda.Web\\Tienda.Web.csproj": {
+    "C:\\Dev\\Tienda Services\\Tienda.Web\\Tienda.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\Examen copia\\Tienda.Web\\Tienda.Web.csproj",
+        "projectUniqueName": "C:\\Dev\\Tienda Services\\Tienda.Web\\Tienda.Web.csproj",
         "projectName": "Tienda.Web",
-        "projectPath": "C:\\Dev\\Examen copia\\Tienda.Web\\Tienda.Web.csproj",
+        "projectPath": "C:\\Dev\\Tienda Services\\Tienda.Web\\Tienda.Web.csproj",
         "packagesPath": "C:\\Users\\A4ALUMNO\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\Examen copia\\Tienda.Web\\obj\\",
+        "outputPath": "C:\\Dev\\Tienda Services\\Tienda.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -94,8 +94,8 @@
         "frameworks": {
           "netcoreapp3.0": {
             "projectReferences": {
-              "C:\\Dev\\Examen copia\\Tienda.Lib\\Tienda.Lib.csproj": {
-                "projectPath": "C:\\Dev\\Examen copia\\Tienda.Lib\\Tienda.Lib.csproj"
+              "C:\\Dev\\Tienda Services\\Tienda.Lib\\Tienda.Lib.csproj": {
+                "projectPath": "C:\\Dev\\Tienda Services\\Tienda.Lib\\Tienda.Lib.csproj"
               }
             }
           }

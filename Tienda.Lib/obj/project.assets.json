@@ -185,11 +185,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\Examen copia\\Tienda.Lib\\Tienda.Lib.csproj",
+      "projectUniqueName": "C:\\Dev\\Tienda Services\\Tienda.Lib\\Tienda.Lib.csproj",
       "projectName": "Tienda.Lib",
-      "projectPath": "C:\\Dev\\Examen copia\\Tienda.Lib\\Tienda.Lib.csproj",
+      "projectPath": "C:\\Dev\\Tienda Services\\Tienda.Lib\\Tienda.Lib.csproj",
       "packagesPath": "C:\\Users\\A4ALUMNO\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\Examen copia\\Tienda.Lib\\obj\\",
+      "outputPath": "C:\\Dev\\Tienda Services\\Tienda.Lib\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

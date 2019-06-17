@@ -1,14 +1,16 @@
 ﻿class ClientsViewModel
 {
-    constructor($http)
+    constructor($ClientsService)
     {
         this.Clients = [];
-        this.Http = $http;
         this.GridOptions = null;
         this.InitializeTable();
         this.SelectedClient = null;
-        this.GetAllClients();
+        
         this.IsEditing = false;
+        this.ClientsService = $ClientsService;
+
+        this.GetAllClients();
     }
 
     InitializeTable()
@@ -31,7 +33,7 @@
 
     GetAllClients()
     {
-        this.Http.get("api/clients")
+        this.ClientsService.GetAllAsync()
             .then((response) =>
             {
                 this.OnGetData(response);
@@ -46,8 +48,9 @@
             let client = new Client(response.data[i]);
             this.Clients.push(client);
         }
-        console.log(response)
     }
+
+
 
     CheckFormAdd(complete)
     {
@@ -70,13 +73,13 @@
 
     SetData(client)
     {
-        this.Http.post("api/clients", client)
-            .then((response) =>
-            {
-                this.OnSuccesPost(response);
-            },
-                response => console.log(response)
-            );
+        this.ClientsService.PostAsync(client)
+        .then((response) =>
+        {
+            this.OnSuccesPost(response);
+        },
+            response => console.log(response)
+        );
     }
 
     OnSuccesPost(response)
@@ -104,7 +107,6 @@
         this.Password = client.Password;
         this.Address = client.Address;
         this.IsEditing = true;
-
     }
 
     CheckFormSave(complete)
@@ -131,7 +133,7 @@
     SaveEditClient()
     {
         let url = "api/clients/" + this.SelectedClient.Id;
-        this.Http.put(url, JSON.stringify(this.SelectedClient))
+        this.ClientsService.PutAsync(url, JSON.stringify(this.SelectedClient))
             .then((response) =>
             {
                 this.OnSuccesEdit(response);
@@ -152,7 +154,7 @@
     RemoveClient(client)
     {
         let url = "api/clients/" + client.Id;
-        this.Http.delete(url)
+        this.ClientsService.DeleteAsync(url)
             .then((response) =>
             {
                 this.OnSuccesRemove(client);
