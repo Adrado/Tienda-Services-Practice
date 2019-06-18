@@ -19,7 +19,7 @@
                 data: 'vm.Products',
                 appScopeProvider: this,
             columnDefs: [
-                { name: 'ProductName', field: 'ProductName' },
+                { name: 'Name', field: 'Name' },
                     { name: 'Price', field: 'Price' },
                     { name: '', field: 'Id', cellTemplate: '<input type="button" value="Edit" ng-click="grid.appScope.Select(row.entity)">' },
                     { name: ' ', field: 'Id', cellTemplate: '<input type="button" value="Remove" ng-click="grid.appScope.RemoveProduct(row.entity)">'}
@@ -56,7 +56,7 @@
     AddNewProduct()
     {
         let product = new Product();
-        product.ProductName = this.ProductName;
+        product.Name = this.Name;
         product.Price = this.Price;
         this.SetData(product);
     }
@@ -87,7 +87,7 @@
     Select(product)
     {
         this.SelectedProduct = product;
-        this.ProductName = product.ProductName;
+        this.Name = product.Name;
         this.Price = product.Price;
         this.IsEditing = true;
     }
@@ -102,7 +102,7 @@
 
     SaveSelectedProduct()
     {
-        this.SelectedProduct.ProductName = this.ProductName;
+        this.SelectedProduct.Name = this.Name;
         this.SelectedProduct.Price = this.Price;
         this.SaveEditProduct();
         this.IsEditing = false;

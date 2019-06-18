@@ -1,4 +1,4 @@
-﻿class ClientsService extends GenericServices
+﻿class ClientsService extends GenericService
 {
     constructor($http)
     {

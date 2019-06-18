@@ -1,10 +1,11 @@
 ﻿class PurchasesViewModel
 {
-    constructor($http)
+    constructor($ClientsService, $ProductsService)
     {
+        this.ClientsService = $ClientsService;
+        this.ProductsService = $ProductsService;
         this.SelectedClient = null;
         this.Clients = [];
-        this.Http = $http;
         this.GetAllClients();
         this.SelectedProduct = null;
         this.Products = [];
@@ -14,7 +15,7 @@
 
     GetAllClients()
     {
-        this.Http.get('api/clients')
+        this.ClientsService.GetAllAsync()
             .then((response) =>
             {
                 this.OnGetDataClient(response);
@@ -84,8 +85,7 @@
 
     SaveEditClient()
     {
-        let url = "api/clients/" + this.SelectedClient.Id;
-        this.Http.put(url, JSON.stringify(this.SelectedClient))
+        this.ClientsService.PutAsync(this.SelectedClient)
             .then((response) =>
             {
                 this.OnSuccesEdit(response);

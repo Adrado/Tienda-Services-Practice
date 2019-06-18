@@ -39,8 +39,7 @@ namespace Tienda.Web.Controllers
                         Surname = "Alcalá",
                         Email = "L@l",
                         Password = "asdf",
-                        Address = "Libertad 087",
-                        Purchases = new List<string>() { "Bike" }
+                        Address = "Libertad 087"
                     });
 
                 Entities.Add(
@@ -51,8 +50,7 @@ namespace Tienda.Web.Controllers
                         Surname = "Arwoq",
                         Email = "O@o",
                         Password = "1234",
-                        Address = "Infierno666",
-                        Purchases = new List<string>() { "Skate" }
+                        Address = "Infierno666"
                     });
             }
         }

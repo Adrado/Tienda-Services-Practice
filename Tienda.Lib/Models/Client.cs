@@ -7,6 +7,6 @@ namespace Tienda.Lib.Models
     public class Client : User
     {
         public string Address { get; set; }
-        public List<string> Purchases { get; set; }
+        public List<Guid> Purchases { get; set; }
     }
 }

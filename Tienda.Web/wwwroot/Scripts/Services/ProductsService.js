@@ -1,4 +1,4 @@
-﻿class ProductsService extends GenericServices
+﻿class ProductsService extends GenericService
 {
     constructor($http)
     {

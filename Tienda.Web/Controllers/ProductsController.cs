@@ -35,7 +35,7 @@ namespace Tienda.Web.Controllers
                     new Product()
                     {
                         Id = Guid.NewGuid(),
-                        ProductName = "Bike",
+                        Name = "Bike",
                         Price = 200
                     });
 
@@ -43,7 +43,7 @@ namespace Tienda.Web.Controllers
                     new Product()
                     {
                         Id = Guid.NewGuid(),
-                        ProductName = "Skate",
+                        Name = "Skate",
                         Price = 100
                     });
             }

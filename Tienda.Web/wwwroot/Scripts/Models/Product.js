@@ -5,7 +5,7 @@
         super(json);
         if (json)
         {
-            this.ProductName = json.productName;
+            this.Name = json.name;
             this.Price = json.price;
         }
         else

@@ -1,4 +1,4 @@
-﻿class GenericServices
+﻿class GenericService
 {
     constructor(http, url)
     {
