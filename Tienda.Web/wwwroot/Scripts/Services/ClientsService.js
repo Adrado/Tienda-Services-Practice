@@ -26,5 +26,4 @@
     }
 }
 
-
 app.service("$ClientsService", ClientsService);

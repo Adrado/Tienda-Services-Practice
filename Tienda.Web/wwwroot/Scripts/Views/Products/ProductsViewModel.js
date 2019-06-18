@@ -1,12 +1,12 @@
 ﻿class ProductsViewModel
 {
-    constructor($http)
+    constructor($ProductsService)
     {
         this.Products = [];
-        this.Http = $http;
         this.GridOptions = null;
         this.InitializeTable();
         this.SelectedProduct = null;
+        this.ProductsService = $ProductsService;
         this.GetAllProducts();
         this.IsEditing = false;
     }
@@ -27,11 +27,9 @@
             };
     }
 
-   
-
     GetAllProducts()
     {
-        this.Http.get("api/products")
+        this.ProductsService.GetAllAsync("api/products")
             .then((response) => {
                 this.OnGetData(response);
             });
@@ -65,7 +63,7 @@
 
     SetData(product)
     {
-        this.Http.post("api/products", product)
+        this.ProductsService.PostAsync(product)
             .then((response) => {
                 this.OnSuccesPost(response);
             },
@@ -113,7 +111,7 @@
     SaveEditProduct()
     {
         let url = "api/products/" + this.SelectedProduct.Id;
-        this.Http.put(url, JSON.stringify(this.SelectedProduct))
+        this.ProductsService.PutAsync(url, JSON.stringify(this.SelectedProduct))
             .then((response) =>
             {
                 this.OnSuccesEdit(response);
@@ -134,7 +132,7 @@
     RemoveProduct(product)
     {
         let url = "api/products/" + product.Id;
-        this.Http.delete(url)
+        this.ProductsService.DeleteAsync(url)
             .then((response) => {
                 this.OnSuccesRemove(product);
             },

@@ -1,12 +1,12 @@
 ﻿class EmployeesViewModel
 {
-    constructor($http)
+    constructor($EmployeesService)
     {
         this.Employees = [];
-        this.Http = $http;
         this.GridOptions = null;
         this.InitializeTable();
         this.SelectedEmployee = null;
+        this.EmployeesService = $EmployeesService;
         this.GetAllEmployees();
         this.IsEditing = false;
     }
@@ -40,7 +40,7 @@
 
     GetAllEmployees()
     {
-        this.Http.get("api/employees")
+        this.EmployeesService.GetAllAsync()
             .then((response) =>
             {
                 this.OnGetData(response);
@@ -70,7 +70,7 @@
 
     SetData(employee)
     {
-        this.Http.post("api/employees", employee)
+        this.EmployeesService.PostAsync(employee)
             .then((response) =>
             {
                 this.OnSuccesPost(response);
@@ -129,7 +129,7 @@
     SaveEditEmployee()
     {
         let url = "api/employees/" + this.SelectedEmployee.Id;
-        this.Http.put(url, JSON.stringify(this.SelectedEmployee))
+        this.EmployeesService.PutAsync(url, JSON.stringify(this.SelectedEmployee))
             .then((response) =>
             {
                 this.OnSuccesEdit(response);
@@ -148,7 +148,7 @@
     RemoveEmployee(employee)
     {
         let url = "api/employees/" + employee.Id;
-        this.Http.delete(url)
+        this.EmployeesService.DeleteAsync(url)
             .then((response) =>
             {
                 this.OnSuccesRemove(employee);
