@@ -2,7 +2,7 @@
 {
     constructor($http)
     {
-        super($http, "api/products");
+        super($http, "api/products/");
     }
 }
 

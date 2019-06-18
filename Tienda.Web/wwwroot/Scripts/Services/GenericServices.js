@@ -16,13 +16,15 @@
         return this.Http.post(this.Url, entity)
     }
 
-    PutAsync(urlId, entity)
+    PutAsync(entity)
     {
-        return this.Http.put(urlId, entity)
+        let urlID = this.Url + entity.Id;
+        return this.Http.put(urlID, entity)
     }
 
-    DeleteAsync(urlId)
+    DeleteAsync(entity)
     {
-        return this.Http.delete(urlId)
+        let urlID = this.Url + entity.Id;
+        return this.Http.delete(urlID)
     }
 }

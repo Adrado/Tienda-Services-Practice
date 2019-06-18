@@ -110,8 +110,8 @@
 
     SaveEditProduct()
     {
-        let url = "api/products/" + this.SelectedProduct.Id;
-        this.ProductsService.PutAsync(url, JSON.stringify(this.SelectedProduct))
+
+        this.ProductsService.PutAsync(this.SelectedProduct)
             .then((response) =>
             {
                 this.OnSuccesEdit(response);
@@ -131,8 +131,7 @@
 
     RemoveProduct(product)
     {
-        let url = "api/products/" + product.Id;
-        this.ProductsService.DeleteAsync(url)
+        this.ProductsService.DeleteAsync(product)
             .then((response) => {
                 this.OnSuccesRemove(product);
             },

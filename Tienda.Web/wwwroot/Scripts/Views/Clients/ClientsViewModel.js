@@ -130,8 +130,7 @@
 
     SaveEditClient()
     {
-        let url = "api/clients/" + this.SelectedClient.Id;
-        this.ClientsService.PutAsync(url, JSON.stringify(this.SelectedClient))
+        this.ClientsService.PutAsync(this.SelectedClient)
             .then((response) =>
             {
                 this.OnSuccesEdit(response);
@@ -150,9 +149,8 @@
     }
 
     RemoveClient(client)
-    {
-        let url = "api/clients/" + client.Id;
-        this.ClientsService.DeleteAsync(url)
+    {   
+        this.ClientsService.DeleteAsync(client)
             .then((response) =>
             {
                 this.OnSuccesRemove(client);

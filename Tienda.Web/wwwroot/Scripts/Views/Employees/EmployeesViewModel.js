@@ -128,8 +128,7 @@
 
     SaveEditEmployee()
     {
-        let url = "api/employees/" + this.SelectedEmployee.Id;
-        this.EmployeesService.PutAsync(url, JSON.stringify(this.SelectedEmployee))
+        this.EmployeesService.PutAsync(this.SelectedEmployee)
             .then((response) =>
             {
                 this.OnSuccesEdit(response);
@@ -147,8 +146,7 @@
 
     RemoveEmployee(employee)
     {
-        let url = "api/employees/" + employee.Id;
-        this.EmployeesService.DeleteAsync(url)
+        this.EmployeesService.DeleteAsync(employee)
             .then((response) =>
             {
                 this.OnSuccesRemove(employee);
